@@ -168,9 +168,18 @@ a
 .slide_bar
 {
     background: black;
-    width: 27%;
+    width: 28%;
     padding: 8px;
-    /* height: 100vh; */
+    height: 100vh;
+    position: fixed;
+    top: 64px;
+    
+}
+.slide_bar div
+{
+    border-radius: 12px;
+    background-color: #121212;
+
 }
 .slide_bar_left
 {
@@ -208,6 +217,51 @@ a
     width: 15px;
     display: inline-block;
     height: 15px;
+}
+.slide_bar_list
+{
+    height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.create_list,.find_list
+{
+    padding: 16px 20px;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    background: #1f1f1f;
+}
+.create_list .text_list, .find_list .text_list
+{
+    color: white;
+
+}
+.text_list
+{
+    font-size: 16px;
+    font-weight: 700;
+}
+.text_help
+{
+    font-size: 14px;
+    color: white;
+    
+}
+.create_list .btn_create,.find_list button
+{
+    padding: 5px 16px;
+    background-color: white;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.btn_create span, button span
+{
+    color: black;
+    font-weight: 700;
+    font-size: 14px;
 }
 .main   
 {

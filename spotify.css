@@ -10,13 +10,30 @@ html,body
     height: 100vh;
 }
 ::-webkit-scrollbar {
-    width: 1px; 
-    height: 12px; 
-}
-::-webkit-scrollbar-track {
-    background: #f0f0f0; /* Màu nền */
-    
-}
+    width: 12px; 
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: transparent; 
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: gray; 
+   
+  }
+  
+  ::-webkit-scrollbar-thumb:vertical {
+    background: gray;
+  }
+  
+  ::-webkit-scrollbar-thumb:vertical:before,
+  ::-webkit-scrollbar-thumb:vertical:after {
+    content: ''; 
+    height: 10px;
+    display: block;
+    background: transparent;
+  }
+
 a
 {
     text-decoration: none;
@@ -41,7 +58,7 @@ a
     grid-area: header;
     padding: 8px;
     width: 100%;
-   position: static;
+   position: fixed;
    top: 0;
    left: 0;
    right: 0;
@@ -114,13 +131,14 @@ a
     border: none;
     outline: none;
     background-color: #1f1f1f;
-    color: white;
+    color:white;
     
 }
 .header__login
 {
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
  .btn_sign_up
@@ -149,6 +167,10 @@ a
     font-weight: bold;
     
 }
+.header__login:hover>.btn_login>span
+{
+    background-color: red;
+}
 .Svg-sc-ytk21e-0
 {
     fill: white;
@@ -168,34 +190,41 @@ a
 .slide_bar
 {
     background: black;
-    width: 28%;
-    padding: 8px;
+    width: 28.5%;
+    padding: 0 8px;
     height: 100vh;
     position: fixed;
     top: 64px;
     
 }
-.slide_bar div
+.slide_bar .slide
 {
     border-radius: 12px;
     background-color: #121212;
 
 }
+.slide .text
+{
+    padding: 12px 16px 8px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
 .slide_bar_left
 {
-    background-color: #121212;
+    background-color: #121212 !important;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-radius: 10px;
+    
 }
+
 .icon_slide
 {
     display: flex;
     align-items: center;
     font-weight: 700;
-    padding: 12px 16px 8px;
-    margin-left: 4px;
+    padding: 4px 5px;
+    /* margin-left: 4px; */
     cursor: pointer;
   
 }
@@ -205,6 +234,11 @@ a
     display: inline-block;
     margin-left: 3px;
     margin-right: 12px;
+}
+.icon_library .Svg-sc-ytk21e-0 
+{
+    width: 25px;
+
 }
 .btn_plus
 {
@@ -223,19 +257,28 @@ a
     height: 200px;
     overflow-y: auto;
     overflow-x: hidden;
+    padding: 0 8px 8px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
+
 .create_list,.find_list
 {
     padding: 16px 20px;
-    margin: 20px 0;
     display: flex;
     flex-direction: column;
-    background: #1f1f1f;
+    background: #1f1f1f !important;
+    border-radius: 12px;
 }
 .create_list .text_list, .find_list .text_list
 {
     color: white;
 
+}
+.space
+{
+    margin: 19px 16px;
 }
 .text_list
 {
@@ -260,13 +303,74 @@ a
 .btn_create span, button span
 {
     color: black;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 14px;
+}
+.footer_slide_bar .footer_slide
+{
+    margin: 32px 0;
+    padding:  0 24px;
+
+}
+.security
+{
+    display: flex;
+    flex-wrap: wrap;
+  
+}
+.security >div
+{
+    margin: 0 16px 8px 0 ;
+}
+.security > div > a
+{
+    margin-bottom: 8px;
+}
+.security > div > a>span
+{
+    color: #A9AEB3;
+    font-weight: 500;
+    font-size: 11px;
+   
+}
+.footer_cookie
+{
+    color: white;
+    font-size: 12px;
+}
+.language_footer
+{
+ 
+    padding: 0 24px 24px;
+}
+.language_footer button
+{
+    background-color: black;
+    border: 1px solid #7c7c7c; 
+    padding: 5px 15px 5px 30px;
+    border-radius: 32px;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    position: relative;
+}
+.language_footer button span
+{
+    position: absolute;
+    top: 4px;
+    left: 10px;
+    width: 16px;
+    display: inline-block;
+    
 }
 .main   
 {
     background-color: blueviolet;
-    grid-area: main;
+    position: absolute;
+    top: 65px;
+    left: 29%;
 }
 .footer
 {
